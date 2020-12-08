@@ -11,13 +11,20 @@ class DvdPresenter:
                  create_dvd: CreateDvd,
                  update_dvd : UpdateDvd,
                  get_all_dvd: GetAllDvd,
-                 remove_dvd: RemoveDvd):
+                 remove_dvd: RemoveDvd,):
+
         self.view = view
+
         self.create_dvd = create_dvd
         self.update_dvd = update_dvd
         self.get_all_dvd = get_all_dvd
         self.remove_dvd = remove_dvd
         self.setup()
+
+
+
+
+
 
     def setup(self):
         self.view.connect_add(self.add)
@@ -39,6 +46,7 @@ class DvdPresenter:
     def add(self):
         self.open_dialog({'id': None, "name": ""})
 
+
     def edit(self):
         index = self.view.get_current_dvd_index()
         self.open_dialog(self.dvds[index])
@@ -50,4 +58,4 @@ class DvdPresenter:
 
     def get_all(self):
         self.dvds = self.get_all_dvd.exec()         # Получение всех dvd
-        self.view.set_dvds(self.dvds)
+        self.view.set_dvd(self.dvds)

@@ -8,7 +8,7 @@ class CreateOrUpdateDvd (CreateDvd, UpdateDvd):   # Класс унаследо�
     def __init__(self, repository: IDvdRepository):
         self.repository = repository
 
-    def exec(self, book_dto: dict) -> dict:   # Создание dvd
-        cddvd = DvdMapper.dto_to_domain(book_dto)
-        new_book = self.repository.create_or_update(cddvd)
-        return DvdMapper.domain_to_dto(new_book)
+    def exec(self, dvd_dto: dict) -> dict:   # Создание dvd
+        cddvd = DvdMapper.dto_to_domain(dvd_dto)
+        new_dvd = self.repository.create_or_update(cddvd)
+        return DvdMapper.domain_to_dto(new_dvd)

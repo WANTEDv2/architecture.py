@@ -9,12 +9,16 @@ from infrastructure.data_access.dvd_repository import DvdRepository
 from ui.presenter.dvd_presenter import DvdPresenter
 
 from ui.views.q_dvd_main import QDvdMain
+from ui.views.q_dvd_edit import QDvdEdit
+
+
 
 app = QApplication(sys.argv)
 main_win = QDvdMain()
-
+dialog=QDvdEdit
 repository = DvdRepository()
 c = CreateOrUpdateDvd(repository)
 presenter = DvdPresenter(main_win, c, c, GetAllDvd(repository), RemoveDvd(repository))
 main_win.show()
+dialog = QDvdEdit
 app.exec()

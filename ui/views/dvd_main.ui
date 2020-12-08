@@ -50,7 +50,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QListView" name="dvd_list"/>
+      <widget class="QListWidget" name="dvd_list"/>
      </item>
     </layout>
    </widget>

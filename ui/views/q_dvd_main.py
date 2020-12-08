@@ -10,13 +10,14 @@ class QDvdMain(QMainWindow):
     def connect_add(self, slot):
         self.add_btn.clicked.connect(slot)
 
+
     def connect_del(self, slot):
         self.del_btn.clicked.connect(slot)
 
     def connect_edit(self, slot):
         self.edit_btn.clicked.connect(slot)
 
-    def set_dvds(self, dvds):
+    def set_dvd(self, dvds):
         self.dvd_list.clear()
         for i in dvds:
             self.dvd_list.addItem(i['name'])
