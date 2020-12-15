@@ -15,7 +15,7 @@ class QDvdEdit(QDialog):
 
 
     def get_current_name(self):
-        return self.dvd_edit.text()
+        return self.name_edit.text()
     if __name__ == '__main__':
         app=QApplication(sys.argv)
         dialog = QDialog(None)
